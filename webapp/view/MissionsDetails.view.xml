@@ -1,0 +1,105 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.gamification.controller.MissionsDetails" xmlns="sap.m"
+	xmlns:layout="sap.ui.layout" xmlns:f="sap.f">
+	<Page showHeader="true" title="Mission" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+		<content>
+			<layout:VerticalLayout width="100%" visible="true" class="sapUiResponsiveContentPadding">
+				<layout:content>
+					<ObjectListItem intro="" title="{Name}" icon="sap-icon://settings"
+						number="{path: 'XP', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" numberUnit="XP" numberState="None"
+						type="Active" selected="false" showMarkers="false" attributes="{path:'/MissionsSet', templateShareable:true}">
+						<attributes>
+							<ObjectAttribute title="" text="" active="false" visible="false"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus title="Difficulty" text="{path: 'Difficulty', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}"
+								state="None" icon="sap-icon://unfavorite" visible="true"/>
+						</firstStatus>
+						<secondStatus/>
+					</ObjectListItem>
+					<Text text="{Mission}" width="auto" maxLines="5" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+				</layout:content>
+			</layout:VerticalLayout>
+			<IconTabBar expandable="true" expanded="true" applyContentPadding="true" backgroundDesign="Solid" upperCase="false" visible="true"
+				selectedKey="Ok">
+				<items>
+					<IconTabFilter icon="sap-icon://favorite" iconColor="Neutral" text="" count="" design="Vertical" enabled="true" showAll="false"
+						textDirection="Inherit" visible="true">
+						<content>
+							<layout:BlockLayout background="Default" visible="true">
+								<layout:content>
+									<layout:BlockLayoutRow scrollable="false">
+										<layout:content>
+											<layout:BlockLayoutCell width="2" title="Objective" titleAlignment="Begin" titleLevel="Auto">
+												<layout:content>
+													<ProgressIndicator width="100%"
+														percentValue="{path: 'Progress_percent', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" showValue="true"
+														displayValue="{path: 'Progress', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" state="Warning" enabled="true"
+														visible="true"/>
+												</layout:content>
+											</layout:BlockLayoutCell>
+											<layout:BlockLayoutCell width="2" title="Days remaining" titleAlignment="Begin" titleLevel="Auto">
+												<layout:content>
+													<ProgressIndicator width="100%"
+														percentValue="{path: 'NbDays_percent', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" showValue="true"
+														displayValue="{path: 'DaysRemaining', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" state="Warning"
+														enabled="true" visible="true"/>
+												</layout:content>
+											</layout:BlockLayoutCell>
+										</layout:content>
+									</layout:BlockLayoutRow>
+								</layout:content>
+							</layout:BlockLayout>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://hint" iconColor="Default" text="" count="" design="Vertical" enabled="true" showAll="false"
+						textDirection="Inherit" visible="true">
+						<content>
+							<List mode="None" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
+								growingThreshold="20" growingScrollToLoad="true">
+								<infoToolbar>
+									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+										<content>
+											<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</content>
+									</Toolbar>
+								</infoToolbar>
+								<headerToolbar>
+									<Toolbar enabled="true" visible="false" width="" design="Solid">
+										<content>
+											<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+										</content>
+									</Toolbar>
+								</headerToolbar>
+								<items>
+									<DisplayListItem label="Difficulty" value="{path: 'Difficulty', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}"
+										visible="true" type="Inactive" selected="false"/>
+									<DisplayListItem label="Experience" value="{path: 'XP', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}"
+										visible="true" type="Inactive" selected="false"/>
+									<DisplayListItem label="Number of days" value="{path: 'Nb_days', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}"
+										visible="true" type="Inactive" selected="false"/>
+									<DisplayListItem label="Objective" value="{path: 'Objective', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}"
+										visible="true" type="Inactive" selected="false"/>
+								</items>
+							</List>
+						</content>
+					</IconTabFilter>
+				</items>
+				<content/>
+			</IconTabBar>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="auto" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent>
+			<ToggleButton pressed="false" text="Buy a drink" iconFirst="true" width="auto" enabled="true" visible="true" press="_onToggleButtonPress"/>
+			<ToggleButton pressed="false" text="Badges" iconFirst="true" width="auto" enabled="true" visible="true"/>
+			<f:Avatar initials="" displayShape="Circle" displaySize="S" imageFitType="Cover" press="_onAvatarPress"/>
+		</headerContent>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

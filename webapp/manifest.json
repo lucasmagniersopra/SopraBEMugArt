@@ -1,0 +1,177 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "com.sap.build.standard.gamification",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.2.2"
+		},
+		"ach": "ach",
+		"resources": "resources.json",
+		"dataSources": {
+			"local": {
+				"uri": "/here/goes/your/serviceUrl/local/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "sap.ui.ui5-template-plugin.2masterdetail",
+			"version": "1.32.5"
+		}
+	},
+	"sap.fiori": {
+		"_version": "1.1.0",
+		"registrationIds": [],
+		"archeType": "transactional"
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"_version": "1.3.0",
+		"rootView": {
+			"viewName": "com.sap.build.standard.gamification.view.App",
+			"type": "XML",
+			"async": false,
+			"id": "app"
+		},
+		"autoPrefixId": true,
+		"dependencies": {
+			"minUI5Version": "1.50.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"": {
+				"dataSource": "local",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"preload": true,
+				"settings": {
+					"loadMetadataAsync": false,
+					"json": true,
+					"bJSON": true,
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true,
+					"refreshAfterChange": false,
+					"disableHeadRequestForToken": true
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.sap.build.standard.gamification.view",
+				"controlId": "idAppControl",
+				"clearTarget": false,
+				"controlAggregation": "detailPages",
+				"async": false,
+				"bypassed": {
+					"target": [
+						"Products",
+						"Missions"
+					]
+				}
+			},
+			"targets": {
+				"Products": {
+					"controlAggregation": "detailPages",
+					"viewName": "Products",
+					"viewId": "Products",
+					"viewLevel": 3,
+					"transition": "slide"
+				},
+				"Missions": {
+					"controlAggregation": "masterPages",
+					"viewName": "Missions",
+					"viewId": "Missions",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"MissionsDetails": {
+					"controlAggregation": "detailPages",
+					"viewName": "MissionsDetails",
+					"viewId": "MissionsDetails",
+					"viewLevel": 2,
+					"transition": "slide"
+				},
+				"Profile": {
+					"controlAggregation": "detailPages",
+					"viewName": "Profile",
+					"viewId": "Profile",
+					"viewLevel": 4,
+					"transition": "slide"
+				}
+			},
+			"routes": [{
+				"pattern": "Missions/Products/:context:",
+				"name": "Products",
+				"target": [
+					"Missions",
+					"Products"
+				]
+			}, {
+				"pattern": "Missions",
+				"name": "Missions",
+				"target": [
+					"MissionsDetails",
+					"Missions"
+				]
+			}, {
+				"pattern": "Missions/MissionsDetails/:context:",
+				"name": "MissionsDetails",
+				"target": [
+					"Missions",
+					"MissionsDetails"
+				]
+			}, {
+				"pattern": "Missions/Profile/:context:",
+				"name": "Profile",
+				"target": [
+					"Missions",
+					"Profile"
+				]
+			}, {
+				"pattern": "",
+				"name": "default",
+				"target": [
+					"Products",
+					"Missions"
+				]
+			}]
+		}
+	}
+}

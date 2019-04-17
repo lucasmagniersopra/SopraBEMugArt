@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<ViewSettingsDialog>
+		<groupItems>
+			<ViewSettingsItem text="ID" key="ID"/>
+			<ViewSettingsItem text="Name" key="Name"/>
+			<ViewSettingsItem text="XP" key="XP"/>
+		</groupItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

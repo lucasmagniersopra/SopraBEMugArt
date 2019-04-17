@@ -1,0 +1,149 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.gamification.controller.Profile" xmlns:uxap="sap.uxap"
+	xmlns="sap.m">
+	<uxap:ObjectPageLayout showTitleInHeaderContent="true" showHeaderContent="true" showAnchorBar="true" showFooter="false"
+		subSectionLayout="TitleOnTop">
+		<uxap:headerContent>
+			<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+				visible="true" displayInline="false">
+				<items>
+					<ProgressIndicator width="100%"
+						percentValue="{path: 'Exp_percent', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" showValue="true"
+						displayValue="{path: 'P_Experience', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" state="Success"
+						enabled="true" visible="true"/>
+				</items>
+				<layoutData/>
+			</VBox>
+			<Label text="My Profile" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+		</uxap:headerContent>
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader objectImageURI="{P_Character}" objectTitle="{P_Name}"
+				objectSubtitle="{path: 'P_Level', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" headerDesign="Light"
+				objectImageShape="Circle" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false"
+				isActionAreaAlwaysVisible="true">
+				<uxap:actions>
+					<Button text="Missions" type="Transparent" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onButtonPress"/>
+					<Button text="Buy a drink" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onButtonPress1"/>
+				</uxap:actions>
+				<uxap:breadCrumbsLinks/>
+				<uxap:navigationBar/>
+			</uxap:ObjectPageHeader>
+		</uxap:headerTitle>
+		<uxap:sections>
+			<uxap:ObjectPageSection showTitle="true" title="Dashboard" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Dashboard" mode="Expanded">
+						<uxap:blocks>
+							<List mode="SingleSelectMaster" width="auto" headerText="" footerText="" backgroundDesign="Solid" showSeparators="None" growing="true"
+								growingThreshold="20" growingScrollToLoad="true" visible="true">
+								<infoToolbar/>
+								<headerToolbar/>
+								<items>
+									<CustomListItem type="Active" selected="false" visible="true">
+										<content/>
+									</CustomListItem>
+									<CustomListItem type="Active" selected="false" visible="true">
+										<content>
+											<HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+												visible="true" displayInline="false">
+												<items>
+													<Title text="Recent Badges" titleStyle="H4" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+												</items>
+												<layoutData/>
+											</HBox>
+										</content>
+									</CustomListItem>
+									<CustomListItem type="Active" selected="false" visible="true">
+										<content>
+											<HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+												visible="true" displayInline="false">
+												<items>
+													<Image src="/webapp/resources/badge1.jpg" height="auto" width="50px" visible="true" densityAware="false"/>
+												</items>
+												<layoutData/>
+											</HBox>
+										</content>
+									</CustomListItem>
+									<CustomListItem type="Active" selected="false" visible="true">
+										<content/>
+									</CustomListItem>
+									<CustomListItem type="Active" selected="false" visible="true">
+										<content>
+											<HBox alignItems="Center" direction="Row" fitContainer="false" width="50px" height="50px" justifyContent="SpaceAround" renderType="Div"
+												visible="true" displayInline="false">
+												<items/>
+												<layoutData/>
+											</HBox>
+										</content>
+									</CustomListItem>
+									<CustomListItem type="Active" selected="false" visible="true">
+										<content>
+											<HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+												visible="true" displayInline="false">
+												<items>
+													<Title text="Recent purchases" titleStyle="H4" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+												</items>
+												<layoutData/>
+											</HBox>
+										</content>
+									</CustomListItem>
+									<CustomListItem type="Active" selected="false" visible="true">
+										<content>
+											<HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+												visible="true" displayInline="false">
+												<items>
+													<Image src="/webapp/resources/espresso.png" height="auto" width="50px" visible="true" densityAware="false"/>
+													<Text text="Espresso" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</items>
+												<layoutData/>
+											</HBox>
+										</content>
+									</CustomListItem>
+								</items>
+							</List>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Page Section Title" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Showcase" mode="Expanded">
+						<uxap:blocks>
+							<Label text="Some random text" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Page Section Title" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Leaderboard" mode="Expanded">
+						<uxap:blocks>
+							<Label text="Some random text" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Approve" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Reject" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<OverflowToolbarButton text="Action" type="Default" icon="sap-icon://action" iconFirst="true" width="auto" enabled="true" visible="true"
+						iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</uxap:footer>
+	</uxap:ObjectPageLayout>
+</mvc:View>

@@ -1,0 +1,178 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="780ff9f6b4e95d9b11770081" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityContainer Name="780ff9f6b4e95d9b11770081_Entities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="HomeSet" EntityType="780ff9f6b4e95d9b11770081.Home" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<AssociationSet Name="HomeReportingtoHome" Association="780ff9f6b4e95d9b11770081.HomeReportingtoHome" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true">
+					<End EntitySet="HomeSet" Role="FromRole_HomeReportingtoHome"/>
+					<End EntitySet="HomeSet" Role="ToRole_HomeReportingtoHome"/>
+				</AssociationSet>
+				<AssociationSet Name="HomeManagingHome" Association="780ff9f6b4e95d9b11770081.HomeManagingHome" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true">
+					<End EntitySet="HomeSet" Role="FromRole_HomeManagingHome"/>
+					<End EntitySet="HomeSet" Role="ToRole_HomeManagingHome"/>
+				</AssociationSet>
+				<EntitySet Name="MissionsSet" EntityType="780ff9f6b4e95d9b11770081.Missions" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<AssociationSet Name="MissionsProfileSetProfile" Association="780ff9f6b4e95d9b11770081.MissionsProfileSetProfile" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true">
+					<End EntitySet="MissionsSet" Role="FromRole_MissionsProfileSetProfile"/>
+					<End EntitySet="ProfileSet" Role="ToRole_MissionsProfileSetProfile"/>
+				</AssociationSet>
+				<EntitySet Name="ProfileSet" EntityType="780ff9f6b4e95d9b11770081.Profile" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<AssociationSet Name="ProfileLevelSetLevel" Association="780ff9f6b4e95d9b11770081.ProfileLevelSetLevel" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true">
+					<End EntitySet="ProfileSet" Role="FromRole_ProfileLevelSetLevel"/>
+					<End EntitySet="LevelSet" Role="ToRole_ProfileLevelSetLevel"/>
+				</AssociationSet>
+				<EntitySet Name="LevelSet" EntityType="780ff9f6b4e95d9b11770081.Level" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="ProductsSet" EntityType="780ff9f6b4e95d9b11770081.Products" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+			</EntityContainer>
+			<EntityType Name="Home">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="FullName" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Home\&quot;,\&quot;entityId\&quot;:\&quot;Home\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;FirstName\&quot;,\&quot;propertyId\&quot;:\&quot;FirstName\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot; \&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Home\&quot;,\&quot;entityId\&quot;:\&quot;Home\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;LastName\&quot;,\&quot;propertyId\&quot;:\&quot;LastName\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;5731867d027b6a65f5b03431&quot;,&quot;propertyId&quot;:&quot;FirstName&quot;,&quot;entityId&quot;:&quot;Home&quot;,&quot;navPropId&quot;:&quot;&quot;},{&quot;_id&quot;:&quot;5731867d027b6a65f5b03430&quot;,&quot;propertyId&quot;:&quot;LastName&quot;,&quot;entityId&quot;:&quot;Home&quot;,&quot;navPropId&quot;:&quot;&quot;}]}"
+					sap:label="FullName"/>
+				<Property Name="Gender" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Gender"/>
+				<Property Name="FirstName" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="FirstName"/>
+				<Property Name="LastName" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="LastName"/>
+				<Property Name="Position" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Position"/>
+				<Property Name="Picture" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Picture"/>
+				<Property Name="Country" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Country"/>
+				<Property Name="OfficeTelephone" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="OfficeTelephone"/>
+				<Property Name="EmployeeNumber" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="EmployeeNumber"/>
+				<Property Name="Email" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Email"/>
+				<Property Name="OrgUnit" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OrgUnit"/>
+				<Property Name="hasmanager" Type="Edm.Boolean" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="hasmanager"/>
+				<Property Name="___FK_20ea4e2a5d5a67ec0bea638a" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.Employee"/>
+				<Property Name="___FK_4dd39a60fbe5b1260bea638a" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.Employee"/>
+				<Property Name="NbOfReports" Type="Edm.Decimal" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Home\&quot;,\&quot;entityId\&quot;:\&quot;Home\&quot;,\&quot;navPropName\&quot;:\&quot;Managing\&quot;,\&quot;navPropId\&quot;:\&quot;Managing\&quot;,\&quot;navPropMultiplicity\&quot;:true,\&quot;navPropOp\&quot;:\&quot;count\&quot;,\&quot;propertyName\&quot;:\&quot;ID\&quot;,\&quot;propertyId\&quot;:\&quot;ID\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:0,\&quot;computedType\&quot;:\&quot;number\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;572790d34b72412f879d47f5&quot;,&quot;propertyId&quot;:&quot;ID&quot;,&quot;entityId&quot;:&quot;Home&quot;,&quot;navPropId&quot;:&quot;Managing&quot;}]}"
+					sap:label="NbOfReports"/>
+				<NavigationProperty Name="Reportingto" Relationship="780ff9f6b4e95d9b11770081.HomeReportingtoHome" FromRole="FromRole_HomeReportingtoHome"
+					ToRole="ToRole_HomeReportingtoHome"/>
+				<NavigationProperty Name="Managing" Relationship="780ff9f6b4e95d9b11770081.HomeManagingHome" FromRole="FromRole_HomeManagingHome"
+					ToRole="ToRole_HomeManagingHome"/>
+			</EntityType>
+			<Association Name="HomeReportingtoHome">
+				<End Type="780ff9f6b4e95d9b11770081.Home" Multiplicity="1" Role="FromRole_HomeReportingtoHome"/>
+				<End Type="780ff9f6b4e95d9b11770081.Home" Multiplicity="1" Role="ToRole_HomeReportingtoHome"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_HomeReportingtoHome">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="FromRole_HomeReportingtoHome">
+						<PropertyRef Name="___FK_20ea4e2a5d5a67ec0bea638a"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="HomeManagingHome">
+				<End Type="780ff9f6b4e95d9b11770081.Home" Multiplicity="1" Role="FromRole_HomeManagingHome"/>
+				<End Type="780ff9f6b4e95d9b11770081.Home" Multiplicity="*" Role="ToRole_HomeManagingHome"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_HomeManagingHome">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_HomeManagingHome">
+						<PropertyRef Name="___FK_4dd39a60fbe5b1260bea638a"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="Missions">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="Difficulty" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Difficulty"/>
+				<Property Name="XP" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="XP"/>
+				<Property Name="DaysRemaining" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DaysRemaining"/>
+				<Property Name="Objective" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Objective"/>
+				<Property Name="Picture" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+				<Property Name="Progress" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+				<Property Name="Progress_percent" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;*\&quot;,\&quot;name\&quot;:\&quot;times\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;/\&quot;,\&quot;name\&quot;:\&quot;divide\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Missions\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;Progress\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:3,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;entityName\&quot;:\&quot;Missions\&quot;,\&quot;propertyName\&quot;:\&quot;Progress\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Missions\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;Objective\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:4,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;entityName\&quot;:\&quot;Missions\&quot;,\&quot;propertyName\&quot;:\&quot;Objective\&quot;}],\&quot;displayLabel\&quot;:\&quot;/\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:2,\&quot;computedType\&quot;:\&quot;number\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;100\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:5,\&quot;computedType\&quot;:\&quot;number\&quot;}],\&quot;displayLabel\&quot;:\&quot;*\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:1,\&quot;computedType\&quot;:\&quot;number\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;5cb4817fc251f901075cb622&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Missions&quot;,&quot;propertyId&quot;:&quot;Progress&quot;},{&quot;_id&quot;:&quot;5cb4817fc251f901075cb621&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Missions&quot;,&quot;propertyId&quot;:&quot;Objective&quot;}]}"
+					sap:label="Progress_percent"/>
+				<Property Name="Nb_days" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Nb_days"/>
+				<Property Name="NbDays_percent" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;*\&quot;,\&quot;name\&quot;:\&quot;times\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;/\&quot;,\&quot;name\&quot;:\&quot;divide\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Missions\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;DaysRemaining\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:3,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;entityName\&quot;:\&quot;Missions\&quot;,\&quot;propertyName\&quot;:\&quot;DaysRemaining\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Missions\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;Nb_days\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:4,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;entityName\&quot;:\&quot;Missions\&quot;,\&quot;propertyName\&quot;:\&quot;Nb_days\&quot;}],\&quot;displayLabel\&quot;:\&quot;/\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:2,\&quot;computedType\&quot;:\&quot;number\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;100\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:5,\&quot;computedType\&quot;:\&quot;number\&quot;}],\&quot;displayLabel\&quot;:\&quot;*\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:1,\&quot;computedType\&quot;:\&quot;number\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;propertyId&quot;:&quot;DaysRemaining&quot;,&quot;entityId&quot;:&quot;Missions&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;_id&quot;:&quot;5cb4826b81d86201165bc83f&quot;},{&quot;propertyId&quot;:&quot;Nb_days&quot;,&quot;entityId&quot;:&quot;Missions&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;_id&quot;:&quot;5cb4826b81d86201165bc83e&quot;}]}"
+					sap:label="NbDays_percent"/>
+				<Property Name="Mission" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Mission"/>
+				<Property Name="Badge" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Badge"/>
+				<Property Name="___FK_579c910eec97b80611786d71_00001" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_579c910eec97b80611786d71_00001"/>
+				<NavigationProperty Name="ProfileSet" Relationship="780ff9f6b4e95d9b11770081.MissionsProfileSetProfile"
+					FromRole="FromRole_MissionsProfileSetProfile" ToRole="ToRole_MissionsProfileSetProfile"/>
+			</EntityType>
+			<Association Name="MissionsProfileSetProfile">
+				<End Type="780ff9f6b4e95d9b11770081.Missions" Multiplicity="1" Role="FromRole_MissionsProfileSetProfile"/>
+				<End Type="780ff9f6b4e95d9b11770081.Profile" Multiplicity="1" Role="ToRole_MissionsProfileSetProfile"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_MissionsProfileSetProfile">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="FromRole_MissionsProfileSetProfile">
+						<PropertyRef Name="___FK_579c910eec97b80611786d71_00001"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="Profile">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="P_Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="P_Level" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Level"/>
+				<Property Name="P_Experience" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="P_Experience"/>
+				<Property Name="P_Character" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="P_Character"/>
+				<Property Name="Exp_level" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Level\&quot;,\&quot;navPropId\&quot;:\&quot;LevelSet\&quot;,\&quot;navPropOp\&quot;:\&quot;sum\&quot;,\&quot;propertyId\&quot;:\&quot;L_Experience\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:1,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;navPropName\&quot;:\&quot;LevelSet\&quot;,\&quot;entityName\&quot;:\&quot;Level\&quot;,\&quot;propertyName\&quot;:\&quot;L_Experience\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;5cb4924881d86201165ce2ac&quot;,&quot;navPropId&quot;:&quot;LevelSet&quot;,&quot;entityId&quot;:&quot;Level&quot;,&quot;propertyId&quot;:&quot;L_Experience&quot;}]}"
+					sap:label="Exp_level"/>
+				<Property Name="Exp_percent" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;*\&quot;,\&quot;name\&quot;:\&quot;times\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;/\&quot;,\&quot;name\&quot;:\&quot;divide\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Profile\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;P_Experience\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:3,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;entityName\&quot;:\&quot;Profile\&quot;,\&quot;propertyName\&quot;:\&quot;P_Experience\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Profile\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;Exp_level\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:4,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;entityName\&quot;:\&quot;Profile\&quot;,\&quot;propertyName\&quot;:\&quot;Exp_level\&quot;}],\&quot;displayLabel\&quot;:\&quot;/\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:2,\&quot;computedType\&quot;:\&quot;number\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;100\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:5,\&quot;computedType\&quot;:\&quot;number\&quot;}],\&quot;displayLabel\&quot;:\&quot;*\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:1,\&quot;computedType\&quot;:\&quot;number\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;propertyId&quot;:&quot;P_Experience&quot;,&quot;entityId&quot;:&quot;Profile&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;_id&quot;:&quot;5cb4933481d86201165cf774&quot;},{&quot;propertyId&quot;:&quot;Exp_level&quot;,&quot;entityId&quot;:&quot;Profile&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;_id&quot;:&quot;5cb4933481d86201165cf773&quot;}]}"
+					sap:label="Exp_percent"/>
+				<Property Name="Badge" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Badge"/>
+				<NavigationProperty Name="LevelSet" Relationship="780ff9f6b4e95d9b11770081.ProfileLevelSetLevel" FromRole="FromRole_ProfileLevelSetLevel"
+					ToRole="ToRole_ProfileLevelSetLevel"/>
+			</EntityType>
+			<Association Name="ProfileLevelSetLevel">
+				<End Type="780ff9f6b4e95d9b11770081.Profile" Multiplicity="1" Role="FromRole_ProfileLevelSetLevel"/>
+				<End Type="780ff9f6b4e95d9b11770081.Level" Multiplicity="*" Role="ToRole_ProfileLevelSetLevel"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_ProfileLevelSetLevel">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_ProfileLevelSetLevel">
+						<PropertyRef Name="___FK_14b1ceed6eb7170511775e4f_00014"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="Level">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="L_Experience" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="L_Experience"/>
+				<Property Name="___FK_14b1ceed6eb7170511775e4f_00014" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_14b1ceed6eb7170511775e4f_00014"/>
+			</EntityType>
+			<EntityType Name="Products">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="Cost" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cost"/>
+				<Property Name="Quantity" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Quantity"/>
+				<Property Name="Picture" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Picture"/>
+			</EntityType>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

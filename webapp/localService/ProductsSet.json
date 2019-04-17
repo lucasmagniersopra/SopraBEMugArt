@@ -1,0 +1,43 @@
+[{
+	"ID": "1",
+	"Name": "Espresso",
+	"Cost": 0.5,
+	"Quantity": 6478.02,
+	"Picture": ""
+}, {
+	"ID": "2",
+	"Name": "Cappuccino",
+	"Cost": 1,
+	"Quantity": 2166.89,
+	"Picture": ""
+}, {
+	"ID": "3",
+	"Name": "Americano",
+	"Cost": 0.8,
+	"Quantity": 9185.07,
+	"Picture": ""
+}, {
+	"ID": "4",
+	"Name": "Chocolate",
+	"Cost": 0.7,
+	"Quantity": 9060.9,
+	"Picture": ""
+}, {
+	"ID": "5",
+	"Name": "Viennese Chocolate",
+	"Cost": 1,
+	"Quantity": 1112.65,
+	"Picture": ""
+}, {
+	"ID": "6",
+	"Name": "Tea",
+	"Cost": 0.5,
+	"Quantity": 8237.87,
+	"Picture": ""
+}, {
+	"ID": "7",
+	"Name": "Tomato Juice",
+	"Cost": 0.5,
+	"Quantity": 1368.17,
+	"Picture": ""
+}]
